@@ -3,6 +3,12 @@
 
 {% block body %}
 
+{% if request.resolver_match.url_name == 'signup' %}
+    <h1>signup</h1>
+{% else %}
+    <h1>login</h1>
+{% endif %}
+
 <form action="" method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
